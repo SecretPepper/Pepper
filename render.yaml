@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pepper
+    env: node
+    region: oregon
+    plan: free
+    rootDir: .
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://wtiahnjkofxrsdipymsf.supabase.co
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
